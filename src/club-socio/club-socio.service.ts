@@ -62,7 +62,7 @@ export class ClubSocioService {
       );
 
     club.socios = [...club.socios, socio];
-    return await this.clubRepository.save(club);
+    return await this.clubRepository.save(club); 
   }
 
   async findMembersFromClub(clubId: string): Promise<SocioEntity[]> {

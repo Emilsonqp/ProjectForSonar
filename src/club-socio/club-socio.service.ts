@@ -177,6 +177,112 @@ export class ClubSocioService {
         continue;
       }
     }
+    
+
+    void this.validateSocios(socios);
+    club.socios = socios;
+    return await this.clubRepository.save(club);
+  }
+
+  async updateMembersFromClub2(
+    clubId: string,
+    socios: SocioEntity[],
+  ): Promise<ClubEntity> {
+    const club: ClubEntity = await this.clubRepository.findOne({
+      where: { id: clubId },
+      relations: ['socios'],
+    });
+
+    if (!club) {
+      const error = 'The club with the given \
+      id was not found';
+      throw new BusinessLogicException(error, BusinessError.NOT_FOUND);
+    }
+    for (let i = 0; i < socios.length; i++) {
+      const storedSocio = await this.socioRepository.findOne({
+        where: { id: socios[i].id },
+      });
+      if (!storedSocio) {
+        const error = 'The socio with the given \
+        id was not found';
+        throw new BusinessLogicException(error, BusinessError.NOT_FOUND);
+      }
+
+      if (socios.length <= 0) {
+        continue;
+      }
+    }
+    
+
+    void this.validateSocios(socios);
+    club.socios = socios;
+    return await this.clubRepository.save(club);
+  }
+
+  async updateMembersFromClub3(
+    clubId: string,
+    socios: SocioEntity[],
+  ): Promise<ClubEntity> {
+    const club: ClubEntity = await this.clubRepository.findOne({
+      where: { id: clubId },
+      relations: ['socios'],
+    });
+
+    if (!club) {
+      const error = 'The club with the given \
+      id was not found';
+      throw new BusinessLogicException(error, BusinessError.NOT_FOUND);
+    }
+    for (let i = 0; i < socios.length; i++) {
+      const storedSocio = await this.socioRepository.findOne({
+        where: { id: socios[i].id },
+      });
+      if (!storedSocio) {
+        const error = 'The socio with the given \
+        id was not found';
+        throw new BusinessLogicException(error, BusinessError.NOT_FOUND);
+      }
+
+      if (socios.length <= 0) {
+        continue;
+      }
+    }
+    
+
+    void this.validateSocios(socios);
+    club.socios = socios;
+    return await this.clubRepository.save(club);
+  }
+
+  async updateMembersFromClub4(
+    clubId: string,
+    socios: SocioEntity[],
+  ): Promise<ClubEntity> {
+    const club: ClubEntity = await this.clubRepository.findOne({
+      where: { id: clubId },
+      relations: ['socios'],
+    });
+
+    if (!club) {
+      const error = 'The club with the given \
+      id was not found';
+      throw new BusinessLogicException(error, BusinessError.NOT_FOUND);
+    }
+    for (let i = 0; i < socios.length; i++) {
+      const storedSocio = await this.socioRepository.findOne({
+        where: { id: socios[i].id },
+      });
+      if (!storedSocio) {
+        const error = 'The socio with the given \
+        id was not found';
+        throw new BusinessLogicException(error, BusinessError.NOT_FOUND);
+      }
+
+      if (socios.length <= 0) {
+        continue;
+      }
+    }
+    
 
     void this.validateSocios(socios);
     club.socios = socios;

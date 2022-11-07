@@ -57,7 +57,7 @@ export class ClubSocioService {
     });
     if (!club)
       throw new BusinessLogicException(
-        'The club with the given id was not found',
+        'The club with the given id was not found!',
         BusinessError.NOT_FOUND,
       );
 
